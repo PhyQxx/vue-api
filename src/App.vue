@@ -171,7 +171,7 @@
         if (this.group == '') {
           this.$message({
             message:'分组名称不能为空',
-            type:'success'
+            type:'warning'
           })
         } else {
           this.$ajax.post('/apis/user/insertGroup',{group:this.group},{}).then((response) => {
@@ -184,7 +184,7 @@
               this.$message.error('新增失败');
             }
           })
-        }
+        }.
         this.dialogFormVisible = false;
         this.group = '';
         this.$ajax.post('/apis/user/selectgroup',{},{}).then((response) => {
